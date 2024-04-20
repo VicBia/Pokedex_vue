@@ -10,4 +10,4 @@ const app = createApp(App)
 
 app.use(router)
 
-app.use(bootstrap).mount('#app')
+app.use(bootstrap).mount('#root')

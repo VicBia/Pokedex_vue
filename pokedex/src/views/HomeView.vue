@@ -1,9 +1,19 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import PokedexCards from '../components/PokedexCards.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <PokedexCards />
   </main>
 </template>
+
+<style scoped>
+	.main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+	}
+</style>

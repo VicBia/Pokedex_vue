@@ -4,7 +4,6 @@ import ListPokemon from './ListPokemon.vue'
 
 <template>
   <!-- conteudo dos cards -->
-  <h1>content</h1>
   <ListPokemon />
 </template>
 

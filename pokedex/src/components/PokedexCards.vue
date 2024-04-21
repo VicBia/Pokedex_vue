@@ -4,7 +4,6 @@ import PokedexCardsContent from './PokedexCardsContent.vue'
 
 <template>
   <!-- renderizar os cards -->
-  <h1>cards</h1>
   <PokedexCardsContent />
   <div class="card" style="width: 18rem">
     <!-- <img src="..." class="card-img-top" alt="..."> -->

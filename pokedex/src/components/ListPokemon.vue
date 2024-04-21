@@ -59,4 +59,8 @@ export default {
   </ul>
 </template>
 
-<style scoped></style>
+<style scoped>
+.list-group {
+  display: ruby;
+}
+</style>

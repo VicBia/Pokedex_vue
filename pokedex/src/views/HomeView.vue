@@ -9,11 +9,11 @@ import PokedexCards from '../components/PokedexCards.vue'
 </template>
 
 <style scoped>
-	.main {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 20px;
-	}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 </style>

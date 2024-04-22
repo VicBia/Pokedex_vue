@@ -2,6 +2,9 @@
 
 <script>
 import { mutations } from '@/store'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 export default {
   props: {
@@ -28,14 +31,15 @@ export default {
   methods: {
     selectPokemon() {
       mutations.setPokemonId(this.id)
+      router.push({ name: 'PokemonDetails', params: { id: this.id } })
     }
   }
 }
 </script>
 
 <template>
-  <li class="list-group-item" @click="selectPokemon">
-    <div class="card" style="width: 18rem">
+  <div class="card" style="width: 18rem">
+    <li class="list-group-item" @click="selectPokemon">
       <img :src="sprite" :alt="name" class="card-img-top" />
       <div class="card-body">
         <div class="informations">
@@ -50,8 +54,8 @@ export default {
           </div>
         </div>
       </div>
-    </div>
-  </li>
+    </li>
+  </div>
 </template>
 
 <style scoped>

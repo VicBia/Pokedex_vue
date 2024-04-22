@@ -1,17 +1,17 @@
 <script setup>
 import ListItem from '@/components/ListItem.vue'
-import { state } from '@/store'
+import { state, getters, actions } from '@/store'
 import { parsePokemonInfo } from '@/utils'
 </script>
 
 <script>
 const statsNames = {
   hp: 'HP',
-  attack: 'Attack',
-  defense: 'Defense',
-  speed: 'Speed',
-  'special-attack': 'Sp. Atk',
-  'special-defense': 'Sp. Def'
+  attack: 'Ataque',
+  defense: 'Defesa',
+  speed: 'Velocidade',
+  'special-attack': 'Ataque Especial',
+  'special-defense': 'Defesa Especial'
 }
 
 export default {
@@ -54,12 +54,23 @@ export default {
 <template>
   <div class="pokemon">
     <ListItem v-bind="mainInfo" />
-    <ul class="stats">
-      <li v-for="(stat, index) in stats" :key="index">
+    <ul class="list-group">
+      <li v-for="(stat, index) in stats" :key="index" class="list-group-item">
         {{ parseStatName(stat.stat.name) }}: {{ stat.base_stat }}
       </li>
     </ul>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.pokemon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list-group {
+  justify-content: space-between;
+  text-align: center;
+}
+</style>

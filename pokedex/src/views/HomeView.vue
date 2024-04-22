@@ -13,6 +13,7 @@ import PokedexCards from '../components/PokedexCards.vue'
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-self: center;
   align-items: center;
   padding: 20px;
 }

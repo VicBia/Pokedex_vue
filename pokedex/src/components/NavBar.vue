@@ -9,7 +9,7 @@ import SearchContainer from '../components/SearchContainer.vue'
     data-bs-theme="dark"
   >
     <div class="container-fluid">
-      <RouterLink to="/" class="navbar-brand">Pokedex</RouterLink>
+      <RouterLink to="/" class="navbar-brand" >Pokedex</RouterLink>
       <RouterLink to="/about" class="navbar-brand">Card</RouterLink>
       <SearchContainer />
       <button

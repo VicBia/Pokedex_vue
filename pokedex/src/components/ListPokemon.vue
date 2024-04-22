@@ -47,20 +47,25 @@ export default {
 
 <template>
   <!-- conteudo dos cards -->
-  <ul class="list-group">
-    <p v-if="isSearching" class="list--message">Looking for the pokemon</p>
-    <p v-else-if="hasSearchError" class="list--message">We couldn't find this pokemon</p>
-    <ListItem v-else-if="isPokemonSearch" v-bind="pokemonsList[0]" />
-    <PokemonDescription v-else-if="pokemonId" :id="pokemonId" />
-    <template v-else>
-      <ListItem v-for="pokemon in pokemonsList" :key="pokemon.id" v-bind="pokemon" />
-      <infinite-loading @infinite="infiniteHandler" />
-    </template>
-  </ul>
+  <div>
+    <ul class="list-group">
+      <p v-if="isSearching" class="list--message">Looking for the pokemon</p>
+      <p v-else-if="hasSearchError" class="list--message">We couldn't find this pokemon</p>
+      <ListItem v-else-if="isPokemonSearch" v-bind="pokemonsList[0]" />
+      <PokemonDescription v-else-if="pokemonId" :id="pokemonId" />
+      <template v-else>
+        <ListItem v-for="pokemon in pokemonsList" :key="pokemon.id" v-bind="pokemon" />
+        <infinite-loading @infinite="infiniteHandler" />
+      </template>
+    </ul>
+    <PokemonDetails v-if="pokemonId" :id="pokemonId" />
+  </div>
 </template>
 
 <style scoped>
 .list-group {
-  display: ruby;
+  display: flex;
+  flex-flow: wrap;
+  gap: 10px;
 }
 </style>

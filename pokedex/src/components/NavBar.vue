@@ -9,7 +9,7 @@ import SearchContainer from '../components/SearchContainer.vue'
     data-bs-theme="dark"
   >
     <div class="container-fluid">
-      <RouterLink to="/" class="navbar-brand">Pokedex</RouterLink>
+      <RouterLink to="/" class="navbar-brand"><h2>Pokedex</h2></RouterLink>
       <SearchContainer />
       <!-- <button
         class="navbar-toggler"
@@ -27,6 +27,9 @@ import SearchContainer from '../components/SearchContainer.vue'
 </template>
 
 <style scoped>
+h2 {
+  margin: 0
+}
 nav {
   margin-top: 0 !important;
   margin-left: 0 !important;

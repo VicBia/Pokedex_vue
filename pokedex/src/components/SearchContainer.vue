@@ -10,4 +10,8 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.navbar-collapse {
+  justify-content: end;
+}
+</style>

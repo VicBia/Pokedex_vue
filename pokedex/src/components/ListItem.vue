@@ -31,7 +31,6 @@ export default {
   methods: {
     selectPokemon() {
       mutations.setPokemonId(this.id)
-      router.push({ name: 'PokemonDetails', params: { id: this.id } })
     }
   }
 }

@@ -28,7 +28,9 @@ export default {
   data() {
     return {
       mainInfo: null,
-      stats: []
+      stats: [],
+      moves: [], 
+      games: [],
     }
   },
   created() {
@@ -37,10 +39,12 @@ export default {
     if (pokemonInfo) {
       const infoParsed = parsePokemonInfo(pokemonInfo)
 
-      const { stats, ...rest } = infoParsed
+      const { stats, moves, games, ...rest } = infoParsed
 
       this.mainInfo = rest
       this.stats = stats
+      this.moves = moves
+      this.games = games
     }
   },
   methods: {
@@ -53,10 +57,25 @@ export default {
 
 <template>
   <div class="pokemon">
-    <ListItem v-bind="mainInfo" />
+    <div class="mainPokemonInfo">
+      <ListItem v-bind="mainInfo" />
+      <ul class="list-group">
+        <li v-for="(stat, index) in stats" :key="index" class="list-group-item">
+          {{ parseStatName(stat.stat.name) }}: {{ stat.base_stat }}
+        </li>
+      </ul>
+    </div>
+
     <ul class="list-group">
-      <li v-for="(stat, index) in stats" :key="index" class="list-group-item">
-        {{ parseStatName(stat.stat.name) }}: {{ stat.base_stat }}
+      <h4>Movimentos de ataque</h4>
+      <li v-for="(move, index) in moves" :key="index" class="list-group-item">
+        {{ move }}
+      </li>
+    </ul>
+    <ul class="list-group">
+      <h4>Games (game_indices)</h4>
+      <li v-for="(game, index) in games" :key="index" class="list-group-item">
+        {{ game }}
       </li>
     </ul>
   </div>
@@ -65,10 +84,14 @@ export default {
 <style scoped>
 .pokemon {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mainPokemonInfo {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
 .list-group {
   justify-content: space-between;
   text-align: center;

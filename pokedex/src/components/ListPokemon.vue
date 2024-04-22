@@ -58,7 +58,6 @@ export default {
         <infinite-loading @infinite="infiniteHandler" />
       </template>
     </ul>
-    <PokemonDetails v-if="pokemonId" :id="pokemonId" />
   </div>
 </template>
 
@@ -67,5 +66,6 @@ export default {
   display: flex;
   flex-flow: wrap;
   gap: 10px;
+  justify-content: center;
 }
 </style>

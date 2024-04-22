@@ -11,7 +11,7 @@ import SearchContainer from '../components/SearchContainer.vue'
     <div class="container-fluid">
       <RouterLink to="/" class="navbar-brand">Pokedex</RouterLink>
       <SearchContainer />
-      <button
+      <!-- <button
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
@@ -21,7 +21,7 @@ import SearchContainer from '../components/SearchContainer.vue'
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
     </div>
   </nav>
 </template>

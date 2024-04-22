@@ -42,10 +42,15 @@ export default {
       <img :src="sprite" :alt="name" class="card-img-top" />
       <div class="card-body">
         <div class="informations">
-          <h3 class="identification">
-            <span class="id">#{{ id }}</span>
-            <span class="name">{{ name }}</span>
-          </h3>
+          <div class="identification">
+            <h3>
+              <span class="id">#{{ id }}</span>
+            </h3>
+            <h3>
+              <span class="name">{{ name }}</span>
+            </h3>
+          </div>
+
           <div class="types">
             <span v-for="type in types" :key="type" :class="`bg--${type}`" class="type text--black">
               {{ type }}
